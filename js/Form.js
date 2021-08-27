@@ -3,36 +3,42 @@ class Form
 
 constructor()
 {
+this.title=createElement('h2')
 
+this.input=createInput("Name")
+this.button=createButton("Play")
+this.greeting= createElement('h2')
+
+}
+
+formHide()
+{
+this.input.hide()
+this.button.hide()
+this.greeting.hide()
 }
 
 display()
 {
-var title=createElement('h2')
-title.html("Car Racing Game")
-title.position(130,0)
+this.title.html("Car Racing Game")
+this.title.position(190,0)
 
-var input=createInput("Name")
-input.position(130,160)
+this.input.position(130,160)
 
-var button=createButton("Play")
-button.position(250,200)
+this.button.position(250,200)
 
-var greeting= createElement('h2')
+this.button.mousePressed(()=>
+{
+this.input.hide()
+this.button.hide()
 
-button.mousePressed(function(){
+player.name=this.input.value()
 
-input.hide()
-button.hide()
+playerCount+=1;
+player.updateCount(playerCount);
 
-var name=input.value()
-greeting.html("Hello " + name)
-greeting.position(130,160)
-
-
+this.greeting.html("Hello " + player.name)
+this.greeting.position(130,180)
 })
-
 }
-
-
 }

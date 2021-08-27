@@ -8,8 +8,8 @@ constructor()
 
 getState()
 {
-var gameState=database.ref('gameState')
-gametateRef.on("value", function(data){
+var gameStateRef=database.ref('gameState')
+gameStateRef.on("value", function(data){
     gameState=data.val()
 })
 }
@@ -21,12 +21,28 @@ database.ref('/').update({
 })
 }
 
-start()
+async start()
 {
 if (gameState===0){
+    player= new Player
+   // player.getCount();
+
+var playerCountRef=await database.ref('playerCount').once("value")
+
+if(playerCountRef.exists())
+{
+playerCount=playerCountRef.val()
+player.getCount()
+}
     form=new Form();
     form.display()
-}
-}
+}}
 
+play()
+{
+form.formHide()
+textSize(30)
+text("GAME START",120,100)
+
+}
 }
