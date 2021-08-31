@@ -1,6 +1,7 @@
 var ball;
 var database, position, gameState=0, form, player
 var playerCount
+var allPlayers
 
 function setup(){
     createCanvas(500,500);

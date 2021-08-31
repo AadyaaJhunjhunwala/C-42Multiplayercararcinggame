@@ -33,8 +33,9 @@ this.input.hide()
 this.button.hide()
 
 player.name=this.input.value()
-
 playerCount+=1;
+player.index=playerCount
+player.update()
 player.updateCount(playerCount);
 
 this.greeting.html("Hello " + player.name)
