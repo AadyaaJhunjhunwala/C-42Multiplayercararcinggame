@@ -5,7 +5,7 @@ constructor()
 {
 this.title=createElement('h2')
 
-this.input=createInput("Name")
+this.input= createInput("").attribute("placeholder","Name")
 this.button=createButton("Play")
 this.greeting= createElement('h2')
 
@@ -21,11 +21,10 @@ this.greeting.hide()
 display()
 {
 this.title.html("Car Racing Game")
-this.title.position(190,0)
+this.title.position(width/2-50,0)
 
-this.input.position(130,160)
-
-this.button.position(250,200)
+this.input.position (width/2-40,height/2-80)
+this.button.position(width/2+30,height/2)
 
 this.button.mousePressed(()=>
 {
@@ -39,7 +38,7 @@ player.update()
 player.updateCount(playerCount);
 
 this.greeting.html("Hello " + player.name)
-this.greeting.position(130,180)
+this.greeting.position(width/2-70,height/4)
 })
 }
 }
